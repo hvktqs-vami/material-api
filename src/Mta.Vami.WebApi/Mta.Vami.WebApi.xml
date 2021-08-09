@@ -1,0 +1,743 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mta.Vami.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Mta.Vami.WebApi.Controllers.CountryController">
+            <summary>
+            Api quản lý danh mục Country
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Controllers.MaterialChemicalTypeController">
+            <summary>
+            Api quản lý loại thành phần hóa học
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Controllers.MaterialController">
+            <summary>
+            Api quản lý vật liệu
+            </summary>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Controllers.MaterialController.Create(Mta.Vami.WebApi.Models.MaterialSaveRequest)">
+            <summary>
+            Thêm mới vật liệu
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Controllers.MaterialController.Update(Mta.Vami.WebApi.Models.MaterialSaveRequest)">
+            <summary>
+            Cập nhật thông tin vật liệu
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Controllers.MaterialController.Get(System.Int64)">
+            <summary>
+            Lấy thông tin chi tiết vật liệu theo Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Controllers.MaterialController.Delete(Mta.Vami.WebApi.Models.KeyModel{System.Int64})">
+            <summary>
+            Xóa vật liệu theo Id
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Controllers.MaterialController.SearchPaging(Mta.Vami.WebApi.Models.MaterialSearchRequest)">
+            <summary>
+            Tìm kiếm danh sách vật liệu: Paging
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Controllers.MaterialController.Search(Mta.Vami.WebApi.Models.MaterialSearchRequest)">
+            <summary>
+            Tìm kiếm danh sách vật liệu
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Controllers.MaterialGroupController">
+            <summary>
+            Api quản lý nhóm vật liệu
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Controllers.MaterialMechanicalPropGroupController">
+            <summary>
+            Api quản lý nhóm thuộc tính cơ học
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Controllers.MaterialMechanicalPropTypeController">
+            <summary>
+            Api quản lý loại thuộc tính cơ học
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Controllers.MaterialStandardController">
+            <summary>
+            Api quản lý các tiêu chuẩn
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Controllers.MaterialSubGroupController">
+            <summary>
+            Api quản lý nhóm con
+            </summary>
+        </member>
+        <member name="M:Mta.Vami.WebApi.BaseApiController`3.Create(`0)">
+            <summary>
+            Thêm mới dữ liệu
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.BaseApiController`3.Update(`0)">
+            <summary>
+            Sửa dữ liệu
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.BaseApiController`3.Delete(Mta.Vami.WebApi.Models.KeyModel{`1})">
+            <summary>
+            Xóa dữ liệu
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.BaseApiController`4.SearchPaging(`0)">
+            <summary>
+            Tìm kiếm: Paging
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.BaseApiController`4.Search(`0)">
+            <summary>
+            Tìm kiếm
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Mta.Vami.WebApi.BaseSearchRequest.OrderBys">
+            <summary>
+            Các thông tin sắp xếp
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.BaseSearchRequest.Page">
+            <summary>
+            Index trang: Tính từ page 1
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.BaseSearchRequest.PageSize">
+            <summary>
+            Số lượng item trên mỗi trang
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.SortInfo">
+            <summary>
+            Model sắp xếp
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.SortInfo.Field">
+            <summary>
+            Trường cần sắp xếp
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.SortInfo.Direction">
+            <summary>
+            Hướng sắp xếp Asc Tăng dần Desc Giảm dần
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.SortDirection">
+            <summary>
+            Hướng sắp xếp Asc Tăng dần Desc Giảm dần
+            </summary>
+        </member>
+        <member name="F:Mta.Vami.WebApi.SortDirection.Asc">
+            <summary>
+            Tăng dần
+            </summary>
+        </member>
+        <member name="F:Mta.Vami.WebApi.SortDirection.Desc">
+            <summary>
+            Giảm dần
+            </summary>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Core.DataProvider.GetInternalDbConnection(System.String)">
+            <summary>
+            Gets a connection to the database for a current data provider
+            </summary>
+            <param name="connectionString">Connection string</param>
+            <returns>Connection to a database</returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Core.DataProvider.CreateDataConnection(Mta.Vami.WebApi.Core.UnitOfWork)">
+            <summary>
+            Creates the database connection
+            </summary>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Core.DataProvider.CreateDataContext">
+            <summary>
+            Creates the database connection
+            </summary>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Core.DataProvider.CreateDbConnection">
+            <summary>
+            Creates a connection to a database
+            </summary>
+            <param name="connectionString">Connection string</param>
+            <returns>Connection to a database</returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Core.DataProvider.GetEntityDescriptor``1">
+            <summary>
+            Returns mapped entity descriptor.
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+            <returns>Mapping descriptor</returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Core.DataProvider.GetTable``1(Mta.Vami.WebApi.Core.UnitOfWork)">
+            <summary>
+            Returns queryable source for specified mapping class for current connection,
+            mapped to database table or view.
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+            <returns>Queryable source</returns>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Core.DataProvider.LinqToDbDataProvider">
+            <summary>
+            Sql server data provider
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Core.DataProvider.SupportedLengthOfBinaryHash">
+            <summary>
+            Gets allowed a limit input value of the data for hashing functions, returns 0 if not limited
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Core.DataProvider.BackupSupported">
+            <summary>
+            Gets a value indicating whether this data provider supports backup
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Core.DataProvider.AdditionalSchema">
+            <summary>
+            Additional mapping schema
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Core.DataProvider.ConfigurationName">
+            <summary>
+            Name of database provider
+            </summary>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Core.PaginationSet`1.ToResult``1(System.Func{`0,``0})">
+            <summary>
+            Nếu Mapping Function = null --> Sẽ sử dụng hàm MapToList mặc định của hệ thống
+            </summary>
+            <typeparam name="TDestination"></typeparam>
+            <param name="mapping"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Core.SqlRepository`2.GetTable(Mta.Vami.WebApi.Core.UnitOfWork)">
+            <summary>
+            Gets a table
+            </summary>
+        </member>
+        <member name="M:Mta.Vami.WebApi.JsonHelper.ToJson(System.Object,System.Boolean,System.Boolean)">
+            <summary>
+              Converts an object to its JSON representation (extension method for Stringify)</summary>
+            <param name="value">
+              Object</param>
+            <returns>
+              JSON representation string.</returns>
+            <remarks>
+              null, Int32, Boolean, DateTime, Decimal, Double, Guid types handled automatically.
+              If object has a ToJson method it is used, otherwise value.ToString() is used as last fallback.</remarks>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.Country">
+            <summary>
+            Model danh sách country
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.Country.Name">
+            <summary>
+            Tên Quốc gia
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.Material">
+            <summary>
+            Model thông tin các loại vật liệu
+            </summary>
+        </member>
+        <member name="M:Mta.Vami.WebApi.Entities.Material.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.Material.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.Material.CountryId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.Material.GroupId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.Material.SubGroupId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.Material.HeatTreatment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.Material.StandardId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialChemical">
+            <summary>
+            Model thông tin các thành phần hóa học của vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialChemical.ElementId">
+            <summary>
+            ID của thành phần
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialChemical.Min">
+            <summary>
+            Tỷ lệ nhỏ nhất
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialChemical.Max">
+            <summary>
+            Tỷ lệ lớn nhất
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialChemical.Approx">
+            <summary>
+            Xấp xỉ
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialChemicalType">
+            <summary>
+            Model chứa danh mục các loại thành phần hóa học
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialContent">
+            <summary>
+            Model thông tin nội dung vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialContent.HtmlContent">
+            <summary>
+            Bài viết mô tả chi tiết dạng html
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialContent.PlainTextContent">
+            <summary>
+            Bài viết mô tả chi tiết dạng text
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialEquivalent">
+            <summary>
+            Model thông tin các mã tương đương của vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialEquivalent.EquivMaterialId">
+            <summary>
+            Id của vật liệu tương đương
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialGroup">
+            <summary>
+            Model thông tin nhóm các loại vật liệu
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialHighFatigue">
+            <summary>
+            Model độ bền mỏi cao
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialHighFatigue.Condition">
+            <summary>
+            Điều kiện
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialHighFatigue.Value">
+            <summary>
+            Giá trị
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialHighTempMecProp">
+            <summary>
+            Model thông tin các cơ tính của vật liệu ở nhiệt độ cao
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialHighTempMecProp.Temperature">
+            <summary>
+            Nhiệt độ
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialHighTempMecProp.YieldRp02">
+            <summary>
+            Giới hạn chảy dưới
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialHighTempMecProp.YieldRp1">
+            <summary>
+            Giới hạn chảy trên
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialHighTempMecProp.TensileRm">
+            <summary>
+            Giới hạn bền kéo
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialHighTempMecProp.Hardness">
+            <summary>
+            Độ cứng
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialLowFatigue">
+            <summary>
+            Model độ bền mỏi thấp
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialLowFatigue.Condition">
+            <summary>
+            Điều kiện
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialLowFatigue.Direction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialLowFatigue.FStrengthCoef">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialLowFatigue.FDuctilityExp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialLowFatigue.FDuctilityCoef">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialMechanicalProp">
+            <summary>
+            Model thông tin các cơ tính của vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialMechanicalProp.Unit">
+            <summary>
+            Đơn vị tính
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialMechanicalProp.Comment">
+            <summary>
+            Ghi chú
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialMechanicalPropGroup">
+            <summary>
+            Nhóm thuộc tính cơ học
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialMechanicalPropType">
+            <summary>
+            Model chứa danh mục các loại thuộc tính cơ học
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialStandard">
+            <summary>
+            Model thông tin tiêu chuẩn của vật liệu
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialSubGroup">
+            <summary>
+            Model thông tin nhóm các loại vật liệu
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Entities.MaterialUsage">
+            <summary>
+            Model thông tin ứng dụng của vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Entities.MaterialUsage.Name">
+            <summary>
+            ứng dụng của vật liệu
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Models.CountrySearchRequest">
+            <summary>
+            Reques tìm kiếm Country
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.CountrySearchRequest.SearchKey">
+            <summary>
+            Từ khóa tìm kiếm
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Models.MaterialChemicalTypeSearchRequest">
+            <summary>
+            Request tìm kiếm loại thành phần hóa học
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialChemicalTypeSearchRequest.SearchKey">
+            <summary>
+            Từ khóa tìm kiếm
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Models.MaterialGroupSearchRequest">
+            <summary>
+            Request tìm kiếm nhóm
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialGroupSearchRequest.SearchKey">
+            <summary>
+            Từ khóa tìm kiếm
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Models.MaterialMechanicalPropGroupSearchRequest">
+            <summary>
+            Request tìm kiếm nhóm cơ tính vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialMechanicalPropGroupSearchRequest.SearchKey">
+            <summary>
+            Từ khóa tim kiếm
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Models.MaterialMechanicalPropTypeSearchRequest">
+            <summary>
+            Request tìm kiếm loại cơ tính vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialMechanicalPropTypeSearchRequest.SearchKey">
+            <summary>
+            Từ khóa tìm kiếm
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialMechanicalPropTypeSearchRequest.GroupIds">
+            <summary>
+            Nhóm tìm kiếm
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Models.MaterialModel">
+            <summary>
+            Model thông tin vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.Name">
+            <summary>
+            Tên vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.CountryId">
+            <summary>
+            ID nước của vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.GroupId">
+            <summary>
+            ID nhóm 
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.GroupName">
+            <summary>
+            Tên nhóm
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.SubGroupId">
+            <summary>
+            Id nhóm con
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.SubGroupName">
+            <summary>
+            Tên nhóm con
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.HeatTreatment">
+            <summary>
+            Xử lý nhiệt
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.StandardId">
+            <summary>
+            ID tiêu chuẩn
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.StandardName">
+            <summary>
+            Tên tiêu chuẩn
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.CreatedTime">
+            <summary>
+            Thời gian tạo
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.CreatedUser">
+            <summary>
+            Người tạo
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.UpdatedTime">
+            <summary>
+            Thời gian sửa
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialModel.UpdatedUser">
+            <summary>
+            Người sửa
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Models.MaterialDetailModel">
+            <summary>
+            Model thông tin chi tiết của vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialDetailModel.Content">
+            <summary>
+            Nội dung mô tả chi tiết
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialDetailModel.ChemicalElements">
+            <summary>
+            Danh sách thành phần hóa học
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialDetailModel.HighFatigues">
+            <summary>
+            Danh sách độ bền mỏi cao
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialDetailModel.LowFatigues">
+            <summary>
+            Danh sách độ bền mỏi thấp
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialDetailModel.HighTempMecProps">
+            <summary>
+            Cơ tính ở nhiệt độ cao
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialDetailModel.MechanicalProps">
+            <summary>
+            Cơ tính của vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialDetailModel.Equivalents">
+            <summary>
+            Các vật liệu tương đương
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialDetailModel.Usages">
+            <summary>
+            Các ứng dụng của vật liệu
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Models.MaterialSaveRequest">
+            <summary>
+            Request thêm mới, sửa thông tin vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialSaveRequest.Content">
+            <summary>
+            Nội dung mô tả chi tiết
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialSaveRequest.ChemicalElements">
+            <summary>
+            Danh sách thành phần hóa học
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialSaveRequest.HighFatigues">
+            <summary>
+            Danh sách độ bền mỏi cao
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialSaveRequest.LowFatigues">
+            <summary>
+            Danh sách độ bền mỏi thấp
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialSaveRequest.HighTempMecProps">
+            <summary>
+            Cơ tính ở nhiệt độ cao
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialSaveRequest.MechanicalProps">
+            <summary>
+            Cơ tính của vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialSaveRequest.Equivalents">
+            <summary>
+            Các vật liệu tương đương
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialSaveRequest.Usages">
+            <summary>
+            Các ứng dụng của vật liệu
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Models.MaterialSearchRequest">
+            <summary>
+            Tham số tìm kiểu vật liệu
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialSearchRequest.ListExpression">
+            <summary>
+            Điều kiện tìm kiếm
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Models.MaterialStandardRequest">
+            <summary>
+            Tham số tìm kiểu tiêu chuẩn
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialStandardRequest.SearchKey">
+            <summary>
+            Từ khóa tìm kiếm
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialStandardRequest.CountryIds">
+            <summary>
+            Các nước cần tìm kiếm
+            </summary>
+        </member>
+        <member name="T:Mta.Vami.WebApi.Models.MaterialSubGroupRequest">
+            <summary>
+            Tham số tìm kiếm nhóm con
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialSubGroupRequest.SearchKey">
+            <summary>
+            Từ khóa tìm kiếm
+            </summary>
+        </member>
+        <member name="P:Mta.Vami.WebApi.Models.MaterialSubGroupRequest.GroupIds">
+            <summary>
+            Tìm kiếm theo nhóm
+            </summary>
+        </member>
+    </members>
+</doc>
